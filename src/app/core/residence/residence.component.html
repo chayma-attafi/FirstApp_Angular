@@ -1,0 +1,55 @@
+<p>residence works!</p>
+<input type = "text" >
+<table border="1" >
+
+  <!--  <tr> -->
+       <!--<td>Index</td>--> 
+ <!--       <th>Nom</th>
+        <th>Adresse</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+
+      <ng-container *ngFor="let r of listResidences; let i=index;let f=first; let l=last"> let i=index return index     ; let 1=last-->
+      
+       <!--<tr> <td>{{i}} </td></tr>-->
+    <!--    <tr>
+          <td>{{ r.name }}</td>
+          <td>{{ r.address }}</td>
+          <td>
+            <img [src]="r.image" style="width: 300px;">
+          </td>
+          <td> <button (click)="show(r.id)">Show apartments</button></td>
+        </tr>
+      </ng-container>
+    -->
+
+
+    <tr>
+        <li *ngFor="let r of listResidences">
+            {{r.name}} - {{r.address}} - <img [src] = "r.image" width="300"> -<button [disabled]="r.age>20">age</button>-<button [hidden]="r.age>20">age2</button>-<button *ngIf="r.age>20">age3</button>-<button (click)="show(r.id)">Show apartments</button>
+            
+            <a [routerLink]="['details',r.id]">Details</a>
+
+            <a class="btn btn-primary" [routerLink]="['/editR', r.id]">Edit</a>
+
+            <button (click)="deleteResidence(r.id)">delete</button>
+            <ul>
+                <div *ngFor="let apartement of list">
+                    <li *ngIf="r.id == apartement.residence.id">
+                        {{apartement.appartNum}}
+
+                       
+                    </li>
+                  
+                </div>
+            </ul>
+
+
+           </li>
+    </tr>
+
+
+</table>
+<router-outlet></router-outlet>
+<button (click)="goTo()">Go</button>

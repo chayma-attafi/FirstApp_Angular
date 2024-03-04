@@ -1,0 +1,21 @@
+{{ title }}
+<h1>Bonjour</h1>
+<button (click)= 'f'>test</button>
+<button (click)= "f2('aaa')">test2</button>
+
+<input type ="text" value="title">
+
+<input type ="text" value="{{title}}">
+<input type ="text" [value]="title">
+
+<input type ="text" [(ngModel)]="title">
+
+<br>
+<a href="residence">Residence</a><br> 
+<a routerLink="test">Test</a> <!--pour ne fait pas mise a jour de page actuel-->
+<br>
+<a routerLink="test/chayma">Chayma</a>
+<br>
+<a routerLink="addR">Add Residence</a>
+<router-outlet></router-outlet>
+<!--<app-test></app-test> 1 ere methode d'ajouter componenet-->
